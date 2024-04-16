@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1057939842562-6q2m8l5nmit0n5kd2hfh8hsdenl1srro.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1057939842562-6q2m8l5nmit0n5kd2hfh8hsdenl1srro</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBg6rnn5LpIbVQuLqJra-QBkBBJRzuvYxM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1057939842562</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mycompany.smartstudy</string>
+	<key>PROJECT_ID</key>
+	<string>smartstudy-8adf8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>smartstudy-8adf8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1057939842562:ios:a4e62b2172e9a3cedee91b</string>
+</dict>
+</plist>

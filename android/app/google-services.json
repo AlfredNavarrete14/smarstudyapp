@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1057939842562",
+    "project_id": "smartstudy-8adf8",
+    "storage_bucket": "smartstudy-8adf8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057939842562:android:069659e11f4740d9dee91b",
+        "android_client_info": {
+          "package_name": "com.mycompany.smartstudy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057939842562-28f7cjjvufctdhitmb1lqsfrs2kv0gv3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvf1226vMPO8lzo5rD2ibly-e7meCXBxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057939842562-28f7cjjvufctdhitmb1lqsfrs2kv0gv3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1057939842562-175je1gf1smjl604h6fk9vtgat1qm1fb.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.smartStudy"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
