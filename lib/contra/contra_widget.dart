@@ -24,7 +24,7 @@ class _ContraWidgetState extends State<ContraWidget> {
     super.initState();
     _model = createModel(context, () => ContraModel());
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
   }
 
@@ -154,7 +154,7 @@ class _ContraWidgetState extends State<ContraWidget> {
                 child: SizedBox(
                   width: double.infinity,
                   child: TextFormField(
-                    controller: _model.emailAddressController,
+                    controller: _model.emailAddressTextController,
                     focusNode: _model.emailAddressFocusNode,
                     autofillHints: const [AutofillHints.email],
                     obscureText: false,
@@ -211,7 +211,7 @@ class _ContraWidgetState extends State<ContraWidget> {
                     maxLines: null,
                     keyboardType: TextInputType.emailAddress,
                     cursorColor: FlutterFlowTheme.of(context).primary,
-                    validator: _model.emailAddressControllerValidator
+                    validator: _model.emailAddressTextControllerValidator
                         .asValidator(context),
                   ),
                 ),
@@ -222,7 +222,7 @@ class _ContraWidgetState extends State<ContraWidget> {
                   padding: const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      if (_model.emailAddressController.text.isEmpty) {
+                      if (_model.emailAddressTextController.text.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
                           const SnackBar(
                             content: Text(
@@ -233,7 +233,7 @@ class _ContraWidgetState extends State<ContraWidget> {
                         return;
                       }
                       await authManager.resetPassword(
-                        email: _model.emailAddressController.text,
+                        email: _model.emailAddressTextController.text,
                         context: context,
                       );
                     },
@@ -245,7 +245,7 @@ class _ContraWidgetState extends State<ContraWidget> {
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: const Color(0xFF364B9B),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Plus Jakarta Sans',

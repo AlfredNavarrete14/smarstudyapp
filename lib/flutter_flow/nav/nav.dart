@@ -106,16 +106,57 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const CalendarioWidget(),
         ),
         FFRoute(
-          name: 'menu',
-          path: '/menu',
-          builder: (context, params) => const MenuWidget(),
-        ),
-        FFRoute(
           name: 'Perfil',
           path: '/perfil',
           builder: (context, params) => const PerfilWidget(),
+        ),
+        FFRoute(
+          name: 'menuu',
+          path: '/menuu',
+          builder: (context, params) => const MenuuWidget(),
+        ),
+        FFRoute(
+          name: 'cursoss',
+          path: '/cursoss',
+          builder: (context, params) => const CursossWidget(),
+        ),
+        FFRoute(
+          name: 'clases',
+          path: '/clases',
+          builder: (context, params) => const ClasesWidget(),
+        ),
+        FFRoute(
+          name: 'billetera',
+          path: '/billetera',
+          builder: (context, params) => const BilleteraWidget(),
+        ),
+        FFRoute(
+          name: 'clase1',
+          path: '/clase1',
+          builder: (context, params) => const Clase1Widget(),
+        ),
+        FFRoute(
+          name: 'clase2',
+          path: '/clase2',
+          builder: (context, params) => const Clase2Widget(),
+        ),
+        FFRoute(
+          name: 'clase3',
+          path: '/clase3',
+          builder: (context, params) => const Clase3Widget(),
+        ),
+        FFRoute(
+          name: 'contacto',
+          path: '/contacto',
+          builder: (context, params) => const ContactoWidget(),
+        ),
+        FFRoute(
+          name: 'miperfil',
+          path: '/miperfil',
+          builder: (context, params) => const MiperfilWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {
@@ -190,7 +231,7 @@ extension _GoRouterStateExtensions on GoRouterState {
       extra != null ? extra as Map<String, dynamic> : {};
   Map<String, dynamic> get allParams => <String, dynamic>{}
     ..addAll(pathParameters)
-    ..addAll(queryParameters)
+    ..addAll(uri.queryParameters)
     ..addAll(extraMap);
   TransitionInfo get transitionInfo => extraMap.containsKey(kTransitionInfoKey)
       ? extraMap[kTransitionInfoKey] as TransitionInfo
@@ -209,7 +250,7 @@ class FFParameters {
   // present is the special extra parameter reserved for the transition info.
   bool get isEmpty =>
       state.allParams.isEmpty ||
-      (state.extraMap.length == 1 &&
+      (state.allParams.length == 1 &&
           state.extraMap.containsKey(kTransitionInfoKey));
   bool isAsyncParam(MapEntry<String, dynamic> param) =>
       asyncParams.containsKey(param.key) && param.value is String;
@@ -230,10 +271,10 @@ class FFParameters {
 
   dynamic getParam<T>(
     String paramName,
-    ParamType type, [
+    ParamType type, {
     bool isList = false,
     List<String>? collectionNamePath,
-  ]) {
+  }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
     }
@@ -283,7 +324,7 @@ class FFRoute {
           }
 
           if (requireAuth && !appStateNotifier.loggedIn) {
-            appStateNotifier.setRedirectLocationIfUnset(state.location);
+            appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
             return '/login';
           }
           return null;
@@ -362,7 +403,7 @@ class RootPageContext {
   static bool isInactiveRootPage(BuildContext context) {
     final rootPageContext = context.read<RootPageContext?>();
     final isRootPage = rootPageContext?.isRootPage ?? false;
-    final location = GoRouter.of(context).location;
+    final location = GoRouterState.of(context).uri.toString();
     return isRootPage &&
         location != '/' &&
         location != rootPageContext?.errorRoute;

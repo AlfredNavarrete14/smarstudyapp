@@ -22,60 +22,7 @@ class _LoginWidgetState extends State<LoginWidget>
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final animationsMap = {
-    'columnOnPageLoadAnimation1': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: const Offset(0.0, 60.0),
-          end: const Offset(0.0, 0.0),
-        ),
-        TiltEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: const Offset(-0.349, 0),
-          end: const Offset(0, 0),
-        ),
-      ],
-    ),
-    'columnOnPageLoadAnimation2': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: const Offset(0.0, 60.0),
-          end: const Offset(0.0, 0.0),
-        ),
-        TiltEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: const Offset(-0.349, 0),
-          end: const Offset(0, 0),
-        ),
-      ],
-    ),
-  };
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
@@ -87,20 +34,75 @@ class _LoginWidgetState extends State<LoginWidget>
       length: 2,
       initialIndex: 0,
     )..addListener(() => setState(() {}));
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.passwordController ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
 
-    _model.emailAddressCreateController ??= TextEditingController();
+    _model.emailAddressCreateTextController ??= TextEditingController();
     _model.emailAddressCreateFocusNode ??= FocusNode();
 
-    _model.passwordCreateController ??= TextEditingController();
+    _model.passwordCreateTextController ??= TextEditingController();
     _model.passwordCreateFocusNode ??= FocusNode();
 
-    _model.passwordConfirmController ??= TextEditingController();
+    _model.passwordConfirmTextController ??= TextEditingController();
     _model.passwordConfirmFocusNode ??= FocusNode();
+
+    animationsMap.addAll({
+      'columnOnPageLoadAnimation1': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          TiltEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: const Offset(-0.349, 0),
+            end: const Offset(0, 0),
+          ),
+        ],
+      ),
+      'columnOnPageLoadAnimation2': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: const Offset(0.0, 60.0),
+            end: const Offset(0.0, 0.0),
+          ),
+          TiltEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: const Offset(-0.349, 0),
+            end: const Offset(0, 0),
+          ),
+        ],
+      ),
+    });
   }
 
   @override
@@ -138,6 +140,29 @@ class _LoginWidgetState extends State<LoginWidget>
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        Align(
+                          alignment: const AlignmentDirectional(-1.0, 0.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 0.0, 0.0, 0.0),
+                                child: Text(
+                                  'SMARTSTUDY',
+                                  style: FlutterFlowTheme.of(context)
+                                      .headlineLarge
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        letterSpacing: 0.0,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
                               0.0, 44.0, 0.0, 0.0),
@@ -157,29 +182,6 @@ class _LoginWidgetState extends State<LoginWidget>
                               ),
                             ),
                             alignment: const AlignmentDirectional(-1.0, 0.0),
-                            child: Align(
-                              alignment: const AlignmentDirectional(-1.0, 0.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      'SMARTSTUDY',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineLarge
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
                           ),
                         ),
                         Container(
@@ -221,8 +223,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                               letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
-                                    indicatorColor:
-                                        FlutterFlowTheme.of(context).primary,
+                                    indicatorColor: const Color(0xFF364B9B),
                                     indicatorWeight: 4.0,
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 12.0, 16.0, 12.0),
@@ -279,7 +280,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
-                                                        .emailAddressController,
+                                                        .emailAddressTextController,
                                                     focusNode: _model
                                                         .emailAddressFocusNode,
                                                     autofocus: true,
@@ -369,7 +370,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 context)
                                                             .primary,
                                                     validator: _model
-                                                        .emailAddressControllerValidator
+                                                        .emailAddressTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -382,7 +383,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
-                                                        .passwordController,
+                                                        .passwordTextController,
                                                     focusNode: _model
                                                         .passwordFocusNode,
                                                     autofocus: false,
@@ -493,7 +494,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 context)
                                                             .primary,
                                                     validator: _model
-                                                        .passwordControllerValidator
+                                                        .passwordTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -515,10 +516,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                               .signInWithEmail(
                                                         context,
                                                         _model
-                                                            .emailAddressController
+                                                            .emailAddressTextController
                                                             .text,
                                                         _model
-                                                            .passwordController
+                                                            .passwordTextController
                                                             .text,
                                                       );
                                                       if (user == null) {
@@ -547,10 +548,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
+                                                      color: const Color(0xFF364B9B),
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -644,9 +642,9 @@ class _LoginWidgetState extends State<LoginWidget>
                                                         BorderRadius.circular(
                                                             8.0),
                                                     child: Image.asset(
-                                                      'assets/images/Sin_ttulo.png',
-                                                      width: 145.0,
-                                                      height: 121.0,
+                                                      'assets/images/SmartStudy_logo.png',
+                                                      width: 120.0,
+                                                      height: 120.0,
                                                       fit: BoxFit.fitWidth,
                                                     ),
                                                   ),
@@ -692,7 +690,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
-                                                        .emailAddressCreateController,
+                                                        .emailAddressCreateTextController,
                                                     focusNode: _model
                                                         .emailAddressCreateFocusNode,
                                                     autofocus: true,
@@ -782,7 +780,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 context)
                                                             .primary,
                                                     validator: _model
-                                                        .emailAddressCreateControllerValidator
+                                                        .emailAddressCreateTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -795,7 +793,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
-                                                        .passwordCreateController,
+                                                        .passwordCreateTextController,
                                                     focusNode: _model
                                                         .passwordCreateFocusNode,
                                                     autofocus: false,
@@ -906,7 +904,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 context)
                                                             .primary,
                                                     validator: _model
-                                                        .passwordCreateControllerValidator
+                                                        .passwordCreateTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -919,7 +917,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                   width: double.infinity,
                                                   child: TextFormField(
                                                     controller: _model
-                                                        .passwordConfirmController,
+                                                        .passwordConfirmTextController,
                                                     focusNode: _model
                                                         .passwordConfirmFocusNode,
                                                     autofocus: false,
@@ -1032,7 +1030,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                 context)
                                                             .primary,
                                                     validator: _model
-                                                        .passwordConfirmControllerValidator
+                                                        .passwordConfirmTextControllerValidator
                                                         .asValidator(context),
                                                   ),
                                                 ),
@@ -1049,10 +1047,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       GoRouter.of(context)
                                                           .prepareAuthEvent();
                                                       if (_model
-                                                              .passwordCreateController
+                                                              .passwordCreateTextController
                                                               .text !=
                                                           _model
-                                                              .passwordConfirmController
+                                                              .passwordConfirmTextController
                                                               .text) {
                                                         ScaffoldMessenger.of(
                                                                 context)
@@ -1070,10 +1068,10 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           .createAccountWithEmail(
                                                         context,
                                                         _model
-                                                            .emailAddressCreateController
+                                                            .emailAddressCreateTextController
                                                             .text,
                                                         _model
-                                                            .passwordCreateController
+                                                            .passwordCreateTextController
                                                             .text,
                                                       );
                                                       if (user == null) {
@@ -1084,7 +1082,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                           'bienvenida',
                                                           context.mounted);
                                                     },
-                                                    text: 'Crear cuenta',
+                                                    text: 'CREAR\n',
                                                     options: FFButtonOptions(
                                                       width: 230.0,
                                                       height: 52.0,
@@ -1102,10 +1100,7 @@ class _LoginWidgetState extends State<LoginWidget>
                                                                   0.0,
                                                                   0.0,
                                                                   0.0),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
+                                                      color: const Color(0xFF364B9B),
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -1127,6 +1122,24 @@ class _LoginWidgetState extends State<LoginWidget>
                                                       borderRadius:
                                                           BorderRadius.circular(
                                                               40.0),
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                              Flexible(
+                                                child: Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          0.0, 0.0),
+                                                  child: ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                    child: Image.asset(
+                                                      'assets/images/SmartStudy_logo.png',
+                                                      width: 120.0,
+                                                      height: 120.0,
+                                                      fit: BoxFit.fitWidth,
                                                     ),
                                                   ),
                                                 ),

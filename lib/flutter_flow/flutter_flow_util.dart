@@ -29,6 +29,8 @@ export 'package:page_transition/page_transition.dart';
 export 'internationalization.dart' show FFLocalizations;
 export 'nav/nav.dart';
 
+final RouteObserver<ModalRoute> routeObserver = RouteObserver<PageRoute>();
+
 T valueOrDefault<T>(T? value, T defaultValue) =>
     (value is String && value.isEmpty) || value == null ? defaultValue : value;
 
@@ -368,11 +370,11 @@ void fixStatusBarOniOS16AndBelow(BuildContext context) {
 
 extension ListUniqueExt<T> on Iterable<T> {
   List<T> unique(dynamic Function(T) getKey) {
-    var distinctSet = <T>{};
+    var distinctSet = <dynamic>{};
     var distinctList = <T>[];
     for (var item in this) {
       if (distinctSet.add(getKey(item))) {
-        distinctList.add(getKey(item));
+        distinctList.add(item);
       }
     }
     return distinctList;

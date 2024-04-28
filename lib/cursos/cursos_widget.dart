@@ -41,7 +41,7 @@ class _CursosWidgetState extends State<CursosWidget> {
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
         appBar: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primary,
+          backgroundColor: const Color(0xFF364B9B),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
@@ -54,11 +54,11 @@ class _CursosWidgetState extends State<CursosWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pop();
+              context.pushNamed('menuu');
             },
           ),
           title: Text(
-            'Clases y Docentes',
+            'Docentes',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Outfit',
                   letterSpacing: 0.0,
@@ -77,7 +77,7 @@ class _CursosWidgetState extends State<CursosWidget> {
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                 child: Text(
-                  'Clases y Docentes',
+                  'Docentes',
                   style: FlutterFlowTheme.of(context).headlineMedium.override(
                         fontFamily: 'Outfit',
                         color: FlutterFlowTheme.of(context).primaryText,
@@ -147,7 +147,7 @@ class _CursosWidgetState extends State<CursosWidget> {
                                   color: FlutterFlowTheme.of(context).accent1,
                                   shape: BoxShape.circle,
                                   border: Border.all(
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: const Color(0xFF364B9B),
                                     width: 2.0,
                                   ),
                                 ),
@@ -168,44 +168,57 @@ class _CursosWidgetState extends State<CursosWidget> {
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Nombre del Curso',
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleMedium
-                                          .override(
-                                            fontFamily: 'Plus Jakarta Sans',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                    Text(
-                                      'Profesor: Nombre del Profesor',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily: 'Plus Jakarta Sans',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                    Text(
-                                      'Horario: Lunes a Viernes, 9:00 AM - 11:00 AM',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily: 'Plus Jakarta Sans',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ],
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed('clase1');
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Introducción a la Programación',
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        'Profesor: david',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        'Horario: Lunes a Viernes, 9:00 AM - 11:00 AM',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],
@@ -248,7 +261,7 @@ class _CursosWidgetState extends State<CursosWidget> {
                                   color: FlutterFlowTheme.of(context).accent1,
                                   shape: BoxShape.circle,
                                   border: Border.all(
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: const Color(0xFF364B9B),
                                     width: 2.0,
                                   ),
                                 ),
@@ -269,44 +282,57 @@ class _CursosWidgetState extends State<CursosWidget> {
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     12.0, 0.0, 0.0, 0.0),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text(
-                                      'Nombre del Curso',
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleMedium
-                                          .override(
-                                            fontFamily: 'Plus Jakarta Sans',
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                    Text(
-                                      'Profesor: Nombre del Profesor',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily: 'Plus Jakarta Sans',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                    Text(
-                                      'Horario: Lunes a Viernes, 9:00 AM - 11:00 AM',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .override(
-                                            fontFamily: 'Plus Jakarta Sans',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                            letterSpacing: 0.0,
-                                          ),
-                                    ),
-                                  ],
+                                child: InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                  onTap: () async {
+                                    context.pushNamed('clase2');
+                                  },
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Diseño UX/UI',
+                                        style: FlutterFlowTheme.of(context)
+                                            .titleMedium
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primaryText,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        'Profesor: valentina',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                      Text(
+                                        'Horario: Lunes a Viernes, 9:00 AM - 11:00 AM',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodySmall
+                                            .override(
+                                              fontFamily: 'Plus Jakarta Sans',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
+                                              letterSpacing: 0.0,
+                                            ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],
@@ -379,7 +405,7 @@ class _CursosWidgetState extends State<CursosWidget> {
                                   color: FlutterFlowTheme.of(context).accent1,
                                   shape: BoxShape.circle,
                                   border: Border.all(
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: const Color(0xFF364B9B),
                                     width: 2.0,
                                   ),
                                 ),
@@ -405,7 +431,7 @@ class _CursosWidgetState extends State<CursosWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Nombre del Profesor',
+                                      'Francisco',
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -416,7 +442,7 @@ class _CursosWidgetState extends State<CursosWidget> {
                                           ),
                                     ),
                                     Text(
-                                      'Especialidad: Especialidad del Profesor',
+                                      'Profesor',
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -427,7 +453,7 @@ class _CursosWidgetState extends State<CursosWidget> {
                                           ),
                                     ),
                                     Text(
-                                      'Experiencia: X años',
+                                      'Experiencia: 6 años',
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -438,8 +464,8 @@ class _CursosWidgetState extends State<CursosWidget> {
                                           ),
                                     ),
                                     FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
+                                      onPressed: () async {
+                                        context.pushNamed('contacto');
                                       },
                                       text: 'Contactar',
                                       options: FFButtonOptions(
@@ -450,8 +476,7 @@ class _CursosWidgetState extends State<CursosWidget> {
                                         iconPadding:
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                        color: const Color(0xFF364B9B),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(
@@ -507,7 +532,7 @@ class _CursosWidgetState extends State<CursosWidget> {
                                   color: FlutterFlowTheme.of(context).accent1,
                                   shape: BoxShape.circle,
                                   border: Border.all(
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: const Color(0xFF364B9B),
                                     width: 2.0,
                                   ),
                                 ),
@@ -533,7 +558,7 @@ class _CursosWidgetState extends State<CursosWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Nombre del Profesor',
+                                      'Andres',
                                       style: FlutterFlowTheme.of(context)
                                           .titleMedium
                                           .override(
@@ -544,7 +569,7 @@ class _CursosWidgetState extends State<CursosWidget> {
                                           ),
                                     ),
                                     Text(
-                                      'Especialidad: Especialidad del Profesor',
+                                      'Profesor',
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -555,7 +580,7 @@ class _CursosWidgetState extends State<CursosWidget> {
                                           ),
                                     ),
                                     Text(
-                                      'Experiencia: X años',
+                                      'Experiencia: 10 años',
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -566,8 +591,8 @@ class _CursosWidgetState extends State<CursosWidget> {
                                           ),
                                     ),
                                     FFButtonWidget(
-                                      onPressed: () {
-                                        print('Button pressed ...');
+                                      onPressed: () async {
+                                        context.pushNamed('contacto');
                                       },
                                       text: 'Contactar',
                                       options: FFButtonOptions(
@@ -578,8 +603,7 @@ class _CursosWidgetState extends State<CursosWidget> {
                                         iconPadding:
                                             const EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                        color: const Color(0xFF364B9B),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodySmall
                                             .override(

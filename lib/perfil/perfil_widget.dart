@@ -37,7 +37,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).primary,
+        backgroundColor: const Color(0xFF364B9B),
         automaticallyImplyLeading: false,
         leading: FlutterFlowIconButton(
           borderColor: Colors.transparent,
@@ -50,14 +50,14 @@ class _PerfilWidgetState extends State<PerfilWidget> {
             size: 30.0,
           ),
           onPressed: () async {
-            context.pop();
+            context.pushNamed('menuu');
           },
         ),
         title: Text(
           'Mi informacion',
           style: FlutterFlowTheme.of(context).headlineMedium.override(
                 fontFamily: 'Outfit',
-                color: Colors.white,
+                color: FlutterFlowTheme.of(context).primaryText,
                 fontSize: 22.0,
                 letterSpacing: 0.0,
               ),
@@ -72,8 +72,8 @@ class _PerfilWidgetState extends State<PerfilWidget> {
           Container(
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: 160.0,
-            decoration: BoxDecoration(
-              color: FlutterFlowTheme.of(context).primary,
+            decoration: const BoxDecoration(
+              color: Color(0xFF364B9B),
             ),
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(20.0, 40.0, 20.0, 0.0),
@@ -94,7 +94,7 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.asset(
-                          'assets/images/Sin_ttulo.png',
+                          'assets/images/SmartStudy_logo.png',
                           width: 80.0,
                           height: 80.0,
                           fit: BoxFit.cover,
@@ -112,30 +112,15 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            '[Username]',
+                            'Usuario',
                             style: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
                                   fontFamily: 'Outfit',
-                                  color: FlutterFlowTheme.of(context).info,
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
                                   letterSpacing: 0.0,
                                 ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 4.0, 0.0, 0.0),
-                            child: Text(
-                              '[Email_Address]',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Plus Jakarta Sans',
-                                    color: const Color(0xB4FFFFFF),
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                            ),
                           ),
                         ],
                       ),
@@ -176,18 +161,28 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                 ),
                 child: Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Edit Profile',
-                        style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              fontFamily: 'Plus Jakarta Sans',
-                              letterSpacing: 0.0,
-                            ),
-                      ),
-                    ],
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed('miperfil');
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Perfil',
+                          style:
+                              FlutterFlowTheme.of(context).bodyLarge.override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -224,18 +219,28 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                 ),
                 child: Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Change Password',
-                        style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              fontFamily: 'Plus Jakarta Sans',
-                              letterSpacing: 0.0,
-                            ),
-                      ),
-                    ],
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed('contra');
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Cambiar contraseña',
+                          style:
+                              FlutterFlowTheme.of(context).bodyLarge.override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -272,66 +277,28 @@ class _PerfilWidgetState extends State<PerfilWidget> {
                 ),
                 child: Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Notification Settings',
-                        style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              fontFamily: 'Plus Jakarta Sans',
-                              letterSpacing: 0.0,
-                            ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 16.0, 0.0),
-            child: Material(
-              color: Colors.transparent,
-              elevation: 0.0,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: Container(
-                width: double.infinity,
-                height: 60.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  boxShadow: const [
-                    BoxShadow(
-                      blurRadius: 3.0,
-                      color: Color(0x33000000),
-                      offset: Offset(
-                        0.0,
-                        1.0,
-                      ),
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(8.0),
-                  border: Border.all(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                    width: 0.0,
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 4.0, 0.0),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Terms of Services',
-                        style: FlutterFlowTheme.of(context).bodyLarge.override(
-                              fontFamily: 'Plus Jakarta Sans',
-                              letterSpacing: 0.0,
-                            ),
-                      ),
-                    ],
+                  child: InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
+                    onTap: () async {
+                      context.pushNamed('billetera');
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Cartera de pago',
+                          style:
+                              FlutterFlowTheme.of(context).bodyLarge.override(
+                                    fontFamily: 'Plus Jakarta Sans',
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
