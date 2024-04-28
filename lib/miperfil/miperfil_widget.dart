@@ -60,7 +60,7 @@ class _MiperfilWidgetState extends State<MiperfilWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pushNamed('menuu');
+              context.pushNamed('Perfil');
             },
           ),
           title: Text(

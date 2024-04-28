@@ -63,7 +63,7 @@ class _ContactoWidgetState extends State<ContactoWidget> {
               size: 30.0,
             ),
             onPressed: () async {
-              context.pushNamed('menuu');
+              context.pushNamed('cursos');
             },
           ),
           title: Text(
