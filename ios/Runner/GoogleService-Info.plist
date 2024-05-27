@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1057939842562-6q2m8l5nmit0n5kd2hfh8hsdenl1srro.apps.googleusercontent.com</string>
+	<string>35642686587-t7u90ht4sj0pkhr8d5uht0m8voq23lav.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1057939842562-6q2m8l5nmit0n5kd2hfh8hsdenl1srro</string>
+	<string>com.googleusercontent.apps.35642686587-t7u90ht4sj0pkhr8d5uht0m8voq23lav</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBg6rnn5LpIbVQuLqJra-QBkBBJRzuvYxM</string>
+	<string>AIzaSyA3HgHul430OnntHw4YGFXIhw9qAnj1VSo</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1057939842562</string>
+	<string>35642686587</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.mycompany.smartstudy</string>
 	<key>PROJECT_ID</key>
-	<string>smartstudy-8adf8</string>
+	<string>smartstudy-5f020</string>
 	<key>STORAGE_BUCKET</key>
-	<string>smartstudy-8adf8.appspot.com</string>
+	<string>smartstudy-5f020.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1057939842562:ios:a4e62b2172e9a3cedee91b</string>
+	<string>1:35642686587:ios:daced734512ec01bf9f6de</string>
 </dict>
 </plist>
