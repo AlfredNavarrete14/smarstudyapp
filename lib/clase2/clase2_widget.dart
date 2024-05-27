@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_youtube_player.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'clase2_model.dart';
 export 'clase2_model.dart';
@@ -24,11 +23,6 @@ class _Clase2WidgetState extends State<Clase2Widget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => Clase2Model());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      context.pushNamed('menuu');
-    });
   }
 
   @override
